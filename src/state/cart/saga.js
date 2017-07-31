@@ -8,9 +8,11 @@ import {
 } from './actions';
 
 // Utils
-const delay = (ms: number): Promise<*> => new Promise((res: any) => {
-  setTimeout(res, ms);
-});
+function delay (ms: number): Promise<*> {
+  return new Promise((res: any) => {
+    setTimeout(res, ms);
+  });
+}
 
 // Workers
 function* fetchResults(): Generator<*, *, *> {
