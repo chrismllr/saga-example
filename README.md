@@ -17,7 +17,7 @@ yarn start
 In a separate tab, Run db
 > This uses the [`json-server`](https://github.com/typicode/json-server) package, which is a wonderful way to mock out some API responses for prototyping.
 ```
-json-server db.json
+json-server db.json --port=3001
 ```
 
 ### Todo:
