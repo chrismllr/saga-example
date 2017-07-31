@@ -2,7 +2,7 @@
 import { handlers } from './actions';
 
 // Types
-export type Result = {
+export type ShopResult = {
   id: string,
   album: string,
   artist: string,
@@ -10,19 +10,14 @@ export type Result = {
 };
 
 export type Action =
-  | {
-    type: string,
-    payload: Result
-  }
-  | {
-    type: string,
-    payload: Array<Result>
-  };
+  | { type: string, payload: Array<ShopResult> }
+  | { type: string, payload: ShopResult };
+
 
 export type CartState = {
-  cart: Array<Result>,
-  results: Array<Result>,
-  isFetching: boolean
+  +cart: Array<ShopResult>,
+  +results: Array<ShopResult>,
+  +isFetching: boolean
 };
 
 // Initial State
@@ -33,7 +28,7 @@ const initialState: CartState = {
 };
 
 // Reducer
-export default function cartReducer (state: CartState = initialState, action: Action) {
+export default function cartReducer(state: CartState = initialState, action: Action) {
   const handler = handlers[action.type];
 
   if (handlers[action.type]) {

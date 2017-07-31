@@ -1,7 +1,7 @@
 // @flow
 import uniq from 'lodash.uniq';
 import type {
-  Result,
+  ShopResult,
   Action,
   CartState
 } from './reducer';
@@ -13,21 +13,21 @@ export const RESULTS_REQUESTED = 'cart/RESULTS_REQUESTED';
 export const SET_RESULTS = 'cart/SET_RESULTS';
 
 // Action Creators
-function addToCart (item: Result) {
+function addToCart(item: ShopResult): Action {
   return {
     type: ADD_TO_CART,
     payload: item
   };
 }
 
-function removeFromCart (item: Result) {
+function removeFromCart(item: ShopResult): Action {
   return {
     type: REMOVE_FROM_CART,
     payload: item
   };
 }
 
-export function setResults (results: Array<Result>) {
+export function setResults(results: Array<ShopResult>): Action {
   return {
     type: SET_RESULTS,
     payload: results
@@ -35,7 +35,7 @@ export function setResults (results: Array<Result>) {
 }
 
 // Saga Request Action Creators
-function fetchResults () {
+function fetchResults(): { type: string } {
   return {
     type: RESULTS_REQUESTED
   };

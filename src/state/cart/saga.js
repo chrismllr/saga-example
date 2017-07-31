@@ -10,7 +10,7 @@ import {
 const delay = ms => new Promise(res => setTimeout(res, ms));
 
 // Workers
-function* fetchResults () {
+function* fetchResults() {
   const { data } = yield call(get);
   yield call(delay, 1000);
 
@@ -18,11 +18,11 @@ function* fetchResults () {
 }
 
 // Sagas
-function* watchFetchResults () {
+function* watchFetchResults() {
   yield takeEvery(RESULTS_REQUESTED, fetchResults);
 }
 
-export default function* cartSaga () {
+export default function* cartSaga() {
   yield all([
     fork(watchFetchResults)
   ]);
