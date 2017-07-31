@@ -1,0 +1,28 @@
+{
+  "name": "saga-example",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.16.2",
+    "flow-bin": "^0.51.1",
+    "lodash.uniq": "^4.5.0",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-redux": "^5.0.5",
+    "redux": "^3.7.2",
+    "redux-saga": "^0.15.6"
+  },
+  "devDependencies": {
+    "@dialexa/eslint-config-dialexa": "^4.0.0",
+    "babel-eslint": "^7.2.3",
+    "eslint-plugin-react": "^7.1.0",
+    "react-scripts": "1.0.10"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "flow": "flow"
+  }
+}

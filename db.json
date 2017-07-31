@@ -1,0 +1,22 @@
+{
+  "results": [
+    {
+      "id": "1",
+      "artist": "Bobby Womack",
+      "album": "The Bravest Man in the Universe LP",
+      "price": 1999
+    },
+    {
+      "id": "2",
+      "artist": "Broken Social Scene",
+      "album": "Hug of Thunder LP",
+      "price": 1799
+    },
+    {
+      "id": "3",
+      "artist": "JAY-Z",
+      "album": "4:44",
+      "price": 999
+    }
+  ]
+}
