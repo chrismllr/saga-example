@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import { actions } from '../../state/cart';
-import type { ShopResult } from '../../state/cart/reducer';
+import type { ShopResult, CartState } from '../../state/cart/reducer';
 
 import { currency } from '../../helpers/format';
 import './style.css';
@@ -79,13 +79,13 @@ class App extends React.Component {
   }
 }
 
-function mapStateToProps (state) {
+function mapStateToProps (state: { cart: CartState }) {
   return {
     cart: state.cart
   };
 }
 
-function mapActionCreators (dispatch) {
+function mapActionCreators (dispatch: Function) {
   return {
     cartActions: bindActionCreators(actions, dispatch)
   };

@@ -9,7 +9,7 @@ import {
 
 // Utils
 function delay (ms: number): Promise<*> {
-  return new Promise((res: any) => {
+  return new Promise((res: Function) => {
     setTimeout(res, ms);
   });
 }
