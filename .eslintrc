@@ -1,10 +1,20 @@
 {
   "extends": "@dialexa/eslint-config-dialexa/react",
+  "parser": "babel-eslint",
+  "plugins": [
+    "flowtype"
+  ],
   "rules": {
     "react/prop-types": 0,
     "react/sort-comp": 0,
     "react/no-unused-prop-types": 0,
     "space-before-function-paren": 0,
-    "arrow-parens": [1, "as-needed"]
+    "arrow-parens": [1, "as-needed"],
+    "flowtype/define-flow-type": 1
+  },
+  "settings": {
+    "flowtype": {
+      "onlyFilesWithFlowAnnotation": false
+    }
   }
 }

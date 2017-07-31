@@ -1,3 +1,4 @@
+// @flow
 import { takeEvery, all, fork, call, put } from 'redux-saga/effects';
 import { get } from '../../services/search-results';
 
@@ -7,10 +8,12 @@ import {
 } from './actions';
 
 // Utils
-const delay = ms => new Promise(res => setTimeout(res, ms));
+const delay = (ms: number): Promise<*> => new Promise((res: any) => {
+  setTimeout(res, ms);
+});
 
 // Workers
-function* fetchResults() {
+function* fetchResults(): Generator<*, *, *> {
   const { data } = yield call(get);
   yield call(delay, 1000);
 
@@ -18,11 +21,11 @@ function* fetchResults() {
 }
 
 // Sagas
-function* watchFetchResults() {
+function* watchFetchResults(): Generator<*, *, *> {
   yield takeEvery(RESULTS_REQUESTED, fetchResults);
 }
 
-export default function* cartSaga() {
+export default function* cartSaga(): Generator<*, *, *> {
   yield all([
     fork(watchFetchResults)
   ]);

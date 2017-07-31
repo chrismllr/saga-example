@@ -15,6 +15,7 @@
   "devDependencies": {
     "@dialexa/eslint-config-dialexa": "^4.0.0",
     "babel-eslint": "^7.2.3",
+    "eslint-plugin-flowtype": "^2.35.0",
     "eslint-plugin-react": "^7.1.0",
     "react-scripts": "1.0.10"
   },

@@ -1,19 +1,18 @@
 // @flow
-
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import { actions, reducer } from '../../state/cart';
+import { actions } from '../../state/cart';
+import type { ShopResult } from '../../state/cart/reducer';
+
 import { currency } from '../../helpers/format';
 import './style.css';
 
-const { Result } = reducer;
-
 type AppProps = {
   cart: {
-    results: Array<Result>,
-    cart: Array<Result>
+    results: Array<ShopResult>,
+    cart: Array<ShopResult>
   },
   cartActions: {
     fetchResults: Function,
