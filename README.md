@@ -19,7 +19,3 @@ In a separate tab, Run db
 ```
 json-server db.json --port=3001
 ```
-
-### Todo:
-- saga to calculate taxes as items are removed and added to cart
-- "cancel" the stream for tax calculation?
