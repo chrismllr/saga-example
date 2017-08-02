@@ -82,6 +82,10 @@
   margin: 0 0 1rem;
   padding: 0 0 1rem;
   justify-content: space-between;
+}
+
+.Result:not(:last-child),
+.OrderResult:not(:last-child) {
   border-bottom: 1px solid #ededed;
 }
 

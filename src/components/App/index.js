@@ -74,15 +74,13 @@ class App extends React.Component {
       <div className="App">
         <div className="App__header">
           <div className="container">
-            <h2 className="App__title">Album Results</h2>
+            <h2 className="App__title">Record Store</h2>
             <p className="clr-red">Select an album below to add it to your cart.</p>
           </div>
         </div>
 
         <div className="App__body container">
           <div className="App__body__col pr-large">
-            <h4 className="Results__title">Results</h4>
-
             <ul className="Results__list">
               {results.map((rs, i) => (
                 <li key={i} className="Result">
