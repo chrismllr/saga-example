@@ -11,8 +11,7 @@ export type ShopResult = {
 
 export type Action =
   | { type: string, payload: Array<ShopResult> }
-  | { type: string, payload: ShopResult };
-
+  | { type: string, payload: ShopResult }
 
 export type CartState = {
   +cart: Array<ShopResult>,

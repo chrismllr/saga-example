@@ -3,11 +3,28 @@
     "Segoe UI", "Roboto", "Oxygen";
 }
 
+.ta-right {
+  text-align: right;
+}
+
+.clr-red {
+  color: tomato;
+}
+
+.ts-ital {
+  font-style: italic;
+}
+
 .App__header {
   max-width: 50rem;
   padding: 4rem 2rem 1rem;
   position: relative;
   margin: 0 auto;
+}
+
+.App__body {
+  display: flex;
+  justify-content: space-between;
 }
 
 .App__title {
@@ -17,8 +34,11 @@
 }
 
 .App__subtitle {
-  color: tomato;
   font-size: .9rem;
+}
+
+.Results__list {
+  padding: 0;
 }
 
 .Results__title {
@@ -28,7 +48,7 @@
 
 .Result {
   list-style: none;
-  margin-bottom: 2rem;
+  margin: 0 0 2rem;
 }
 
 .Result__album {

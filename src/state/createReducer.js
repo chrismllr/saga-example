@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
-import cart from './cart/reducer';
+import { reducer as cart } from './cart';
+import { reducer as tax } from './tax';
 
 export default function createReducer () {
   return combineReducers({
-    cart
+    cart,
+    tax
   });
 }
