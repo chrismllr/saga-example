@@ -7,24 +7,52 @@
   text-align: right;
 }
 
+.ta-center {
+  text-align: center;
+}
+
+.pr-large {
+  padding-right: 5rem;
+}
+
 .clr-red {
   color: tomato;
+}
+
+.clr-gray {
+  color: #c0c2c1;
 }
 
 .ts-ital {
   font-style: italic;
 }
 
+.fw-medium {
+  font-weight: 400;
+}
+
+.lsp-small {
+  letter-spacing: .01rem;
+}
+
 .App__header {
-  max-width: 50rem;
-  padding: 4rem 2rem 1rem;
-  position: relative;
-  margin: 0 auto;
+  padding: 4rem 2rem;
+  background-color: #f8f8f8;
+  margin-bottom: 2rem;
 }
 
 .App__body {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
+}
+
+.App__body__col:first-child {
+  width: 60%;
+}
+
+.App__body__col:last-child {
+  width: 40%;
 }
 
 .App__title {
@@ -44,11 +72,17 @@
 .Results__title {
   font-size: 1.75rem;
   font-weight: 700;
+  margin: 0 0 4rem;
 }
 
-.Result {
+.Result,
+.OrderResult {
   list-style: none;
-  margin: 0 0 2rem;
+  display: flex;
+  margin: 0 0 1rem;
+  padding: 0 0 1rem;
+  justify-content: space-between;
+  border-bottom: 1px solid #ededed;
 }
 
 .Result__album {
@@ -64,6 +98,41 @@
 }
 
 .Result__price {
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 0 0 .5rem;
+}
+
+.Order {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 21.875rem;
+}
+
+.Order__header {
+  border-bottom: 1px solid #ccc;
+  padding: 1rem;
+  margin: 0;
+}
+
+.Order__list,
+.Order__summary {
+  padding: 1rem;
+}
+
+.OrderResult__album {
+  font-size: .8rem;
+  font-weight: 700;
+  margin: 0 0 .5rem;
+}
+
+.OrderResult__artist {
+  font-size: .75rem;
+  font-weight: 400;
+  margin: 0 0 .5rem;
+}
+
+.OrderResult__price {
   font-size: 1rem;
   font-weight: 400;
   margin: 0 0 .5rem;

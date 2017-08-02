@@ -50,6 +50,20 @@ class App extends React.Component {
     calculateTaxes();
   }
 
+  get total (): number {
+    const {
+      cartState: { cart },
+      taxState: { taxAmount }
+    } = this.props;
+
+    const net = cart.reduce(
+      (a: number, c: ShopResult) => a + c.price,
+      0
+    );
+
+    return net + taxAmount;
+  }
+
   render () {
     const {
       cartState: { results, cart },
@@ -59,52 +73,69 @@ class App extends React.Component {
     return (
       <div className="App">
         <div className="App__header">
-          <h2 className="App__title">Album Results</h2>
-          <p className="clr-red">Select an album below to add it to your cart.</p>
+          <div className="container">
+            <h2 className="App__title">Album Results</h2>
+            <p className="clr-red">Select an album below to add it to your cart.</p>
+          </div>
         </div>
 
         <div className="App__body container">
-          <div>
+          <div className="App__body__col pr-large">
             <h4 className="Results__title">Results</h4>
 
             <ul className="Results__list">
               {results.map((rs, i) => (
                 <li key={i} className="Result">
-                  <p className="Result__album">{rs.album}</p>
-                  <p className="Result__artist">{rs.artist}</p>
-                  <p className="Result__price">{currency(rs.price)}</p>
-                  <button onClick={this.onItemAdded(rs)}>
-                    (+) Add to Cart
-                  </button>
+                  <div>
+                    <p className="Result__album">{rs.album}</p>
+                    <p className="Result__artist">{rs.artist}</p>
+                  </div>
+                  <div className="ta-right">
+                    <p className="Result__price">{currency(rs.price)}</p>
+                    <button onClick={this.onItemAdded(rs)}>
+                      (+) Add to Cart
+                    </button>
+                  </div>
                 </li>
               ))}
             </ul>
           </div>
 
-          <div>
-            <h4 className="Results__title ta-right">My Cart</h4>
+          <div className="App__body__col Order">
+            <h4 className="Order__header">My Cart</h4>
 
-            <ul className="Results__list ta-right">
+            <ul className="Order__list">
+              {!cart.length &&
+                <h5 className="ta-center clr-gray lsp-small fw-medium">
+                  You don't have anything in your cart!
+                </h5>
+              }
               {cart.map((rs, i) => (
-                <li key={i} className="Result ta-right">
-                  <p className="Result__album ta-right">{rs.album}</p>
-                  <p className="Result__artist ta-right">{rs.artist}</p>
-                  <p className="Result__price ta-right">{currency(rs.price)}</p>
-                  <button onClick={this.onItemRemoved(rs)}>
-                    (-) Remove
-                  </button>
+                <li key={i} className="OrderResult">
+                  <div>
+                    <p className="OrderResult__album">{rs.album}</p>
+                    <p className="OrderResult__artist">{rs.artist}</p>
+                  </div>
+                  <div className="ta-right">
+                    <p className="OrderResult__price">{currency(rs.price)}</p>
+                    <button onClick={this.onItemRemoved(rs)}>
+                      (-) Remove
+                    </button>
+                  </div>
                 </li>
               ))}
             </ul>
 
-            <p className="ta-right">
-              {isFetching
-                ? <span className="clr-red ts-ital">Calculating Taxes...</span>
-                : `Taxes: ${currency(taxAmount)}`}
-            </p>
-            <p className="ta-right">
-              Total: {currency(cart.reduce((a, c) => a + c.price, 0))}
-            </p>
+            <div className="Order__summary">
+              <p className="ta-right">
+                {isFetching
+                  ? <span className="clr-red ts-ital">Calculating Taxes...</span>
+                  : `Taxes: ${currency(taxAmount)}`}
+              </p>
+              <p className="ta-right">
+                Total: {currency(this.total)}
+              </p>
+            </div>
           </div>
         </div>
       </div>
