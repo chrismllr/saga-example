@@ -49,7 +49,7 @@ function* calculateTax(): Generator<*, *, *> {
 
 // Sagas
 function* watchCalculateTax(): Generator<*, *, *> {
-  yield takeLatest(TAXES_REQUESTED, calculateTax);
+  yield takeLatest(['cart/ADD_TO_CART', 'cart/REMOVE_FROM_CART'], calculateTax);
 }
 
 export default function* cartSaga(): Generator<*, *, *> {

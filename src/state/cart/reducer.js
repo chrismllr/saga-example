@@ -12,18 +12,21 @@ export type ShopResult = {
 export type Action =
   | { type: string, payload: Array<ShopResult> }
   | { type: string, payload: ShopResult }
+  | { type: string, payload: number };
 
 export type CartState = {
   +cart: Array<ShopResult>,
   +results: Array<ShopResult>,
-  +isFetching: boolean
+  +isFetching: boolean,
+  +total: number
 };
 
 // Initial State
 const initialState: CartState = {
   cart: [],
   results: [],
-  isFetching: false
+  isFetching: false,
+  total: 0
 };
 
 // Reducer

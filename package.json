@@ -3,14 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@hocs/with-lifecycle": "^0.1.0",
     "axios": "^0.16.2",
     "flow-bin": "^0.51.1",
     "lodash.uniq": "^4.5.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.5",
+    "recompose": "^0.24.0",
     "redux": "^3.7.2",
-    "redux-saga": "^0.15.6"
+    "redux-saga": "^0.15.6",
+    "reselect": "^3.0.1"
   },
   "devDependencies": {
     "@dialexa/eslint-config-dialexa": "^4.0.0",

@@ -1,5 +1,4 @@
 // @flow
-import uniq from 'lodash.uniq';
 import type {
   ShopResult,
   Action,
@@ -46,7 +45,7 @@ export const handlers = {
   [ADD_TO_CART] (state: CartState, action: Action) {
     return {
       ...state,
-      cart: uniq([...state.cart, action.payload])
+      cart: [...state.cart, action.payload]
     };
   },
 
