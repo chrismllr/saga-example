@@ -45,7 +45,7 @@ function App({
       <div className="App__header">
         <div className="container">
           <h2 className="App__title">Record Store</h2>
-          <p className="clr-red">
+          <p className="clr-red">git atst
             Select an album below to add it to your cart.
           </p>
         </div>
@@ -77,7 +77,7 @@ function App({
           <ul className="Order__list">
             {!cart.length &&
               <h5 className="ta-center clr-gray lsp-small fw-medium">
-                You don't have anything in your cart!
+                You don&rsquo;t have anything in your cart!
               </h5>}
 
             {cart.map((rs, i) => (

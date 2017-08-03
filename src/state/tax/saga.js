@@ -4,7 +4,6 @@ import { calculate } from '../../services/tax';
 import type { CartState, ShopResult } from '../cart/reducer';
 
 import {
-  TAXES_REQUESTED,
   setTaxes,
   fetch
 } from './actions';

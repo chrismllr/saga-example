@@ -5,7 +5,6 @@ import type {
 } from './reducer';
 
 // Constants
-export const TAXES_REQUESTED = 'tax/TAXES_REQUESTED';
 export const IS_FETCHING = 'tax/IS_FETCHING';
 export const SET_TAXES = 'tax/SET_TAXES';
 
@@ -21,13 +20,6 @@ export function setTaxes(tax: number): Action {
   return {
     type: SET_TAXES,
     payload: tax
-  };
-}
-
-// Saga Request Action Creators
-function calculateTaxes(): { type: string } {
-  return {
-    type: TAXES_REQUESTED
   };
 }
 
@@ -48,6 +40,4 @@ export const handlers = {
   }
 };
 
-export default {
-  calculateTaxes
-};
+export default {};
