@@ -3,6 +3,7 @@ import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
+import type { Selector } from 'reselect';
 import { compose, withHandlers } from 'recompose';
 import withLifecycle from '@hocs/with-lifecycle';
 
@@ -26,8 +27,8 @@ type AppProps = {
   taxActions: {
     calculateTaxes: Function
   },
-  onItemAdded: Function,
-  onItemRemoved: Function,
+  onItemAdded: (rs: ShopResult) => void,
+  onItemRemoved: (rs: ShopResult) => void,
   derived: {
     total: number
   }
@@ -112,7 +113,7 @@ function App({
   );
 }
 
-const totalSelector = createSelector(
+const totalSelector: Selector<*, *, *> = createSelector(
   (state: { cart: CartState }) => state.cart,
   (state: { tax: TaxState }) => state.tax,
   ({ cart }, { taxAmount }) => cart.reduce(

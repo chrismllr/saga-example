@@ -28,7 +28,7 @@ const getCart = ({ cart: { cart } }: { cart: CartState }) => ({
 
 // Workers
 function* calculateTax(): Generator<*, *, *> {
-  const { cart } = yield select(getCart);
+  const { cart }: { cart: Array<ShopResult> } = yield select(getCart);
 
   yield put(fetch(true));
 
@@ -39,7 +39,7 @@ function* calculateTax(): Generator<*, *, *> {
   }
 
   const taxableAmount = combineAmount(cart);
-  const { data } = yield call(calculate, taxableAmount);
+  const { data }: { data: number } = yield call(calculate, taxableAmount);
 
   yield call(delay, 1200);
   yield put(setTaxes(data));
